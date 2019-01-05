@@ -2,7 +2,6 @@
 gulp --filename trashmountain.png --project give /
 gulp --filename doulos.png --project giveDoulos /
 */
-``
 
 var gulp = require('gulp');
 var rename = require('gulp-rename');
