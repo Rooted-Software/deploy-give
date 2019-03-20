@@ -20,10 +20,10 @@ gulp.task('default', function(){
   console.log(options.filename);
   console.log(options);
   gulp.src('./' + [options.filename])
-      .pipe(rename('/Users/frank/Dev/give/public/images/favicon111.png'))
+      .pipe(rename('/Users/josh/Dev/give/public/images/favicon111.png'))
       .pipe(gulp.dest('/'));
-  //
-  var child = spawn("mup", ['deploy'], {cwd: '/Users/frank/Dev/newMup/' + [options.project]}),
+  
+  var child = spawn("mup", ['deploy'], {cwd: '/Users/josh/Dev/newMup/' + [options.project]}),
       stdout = '',
       stderr = '';
 
