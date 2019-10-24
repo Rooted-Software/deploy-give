@@ -1,4 +1,5 @@
 /*
+nvm use lts/dubnium
 gulp --filename trashmountain.png --project give /
 gulp --filename doulos.png --project giveDoulos /
 */
@@ -15,33 +16,36 @@ var knownOptions = {
 
 var options = minimist(process.argv.slice(2), knownOptions);
 
-gulp.task('default', function(){
-  console.log("Tasked");
+gulp.task('default', function() {
+  console.log('Tasked');
   console.log(options.filename);
   console.log(options);
-  gulp.src('./' + [options.filename])
-      .pipe(rename('/Users/josh/Dev/give/public/images/favicon111.png'))
-      .pipe(gulp.dest('/'));
-  
-  var child = spawn("mup", ['deploy'], {cwd: '/Users/josh/Dev/newMup/' + [options.project]}),
-      stdout = '',
-      stderr = '';
+  gulp
+    .src('./' + [options.filename])
+    .pipe(rename('/Users/josh/Dev/give/public/images/favicon111.png'))
+    .pipe(gulp.dest('/'));
+
+  var child = spawn('mup', ['deploy'], {
+      cwd: '/Users/josh/Dev/newMup/' + [options.project],
+    }),
+    stdout = '',
+    stderr = '';
 
   child.stdout.setEncoding('utf8');
 
-  child.stdout.on('data', function (data) {
-      stdout += data;
-      log(data);
+  child.stdout.on('data', function(data) {
+    stdout += data;
+    log(data);
   });
 
   child.stderr.setEncoding('utf8');
-  child.stderr.on('data', function (data) {
-      stderr += data;
-      log(colors.red(data));
+  child.stderr.on('data', function(data) {
+    stderr += data;
+    log(colors.red(data));
   });
 
   child.on('close', function(code) {
-      log("Done with exit code", code);
-      return 'Done';
+    log('Done with exit code', code);
+    return 'Done';
   });
 });

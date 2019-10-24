@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tmp-deploy": "gulp --filename trashmountain.png --project give",
+    "tmp-dulos": "gulp --filename doulos.png --project giveDoulos"
   },
   "author": "JoshJoe",
   "license": "ISC",
