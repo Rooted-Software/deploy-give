@@ -22,11 +22,11 @@ gulp.task('default', function() {
   console.log(options);
   gulp
     .src('./' + [options.filename])
-    .pipe(rename('/Users/josh/Dev/give/public/images/favicon111.png'))
+    .pipe(rename('/Users/josh.bechard/Dev/give/public/images/favicon111.png'))
     .pipe(gulp.dest('/'));
 
   var child = spawn('mup', ['deploy'], {
-      cwd: '/Users/josh/Dev/newMup/' + [options.project],
+      cwd: '/Users/josh.bechard/Dev/newMup/' + [options.project],
     }),
     stdout = '',
     stderr = '';
