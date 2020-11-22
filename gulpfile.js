@@ -1,8 +1,8 @@
 /*
 lts/erbium for meteor 1.11.1 and higher
 nvm use lts/dubnium
-gulp --filename trashmountain.png --project give /
-gulp --filename doulos.png --project giveDoulos /
+gulp --filename trashmountain.png --project give
+gulp --filename doulos.png --project giveDoulos
 */
 
 var gulp = require('gulp');
